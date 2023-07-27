@@ -16,7 +16,7 @@ let herculesDaysRented = prompt("How many days did you keep Hercules?")
 let herculesDaysToNumbers = parseInt(herculesDaysRented);
 let totalAmountDue = (littleMermaidDaysToNumbers + brotherBearDaysToNumbers + herculesDaysToNumbers) * 3
 
-console.log(totalAmountDue);
+alert(totalAmountDue);
 
 let googleRate = prompt("What does Google pay you per hour?")
 let googleRatePerHour = parseInt(googleRate);
@@ -32,16 +32,16 @@ let hoursAtFacebook = prompt("How many hours did you work at Facebook?")
 let workedAtFacebook = parseInt(hoursAtFacebook);
 let totalPay = (googleRatePerHour * workedAtGoogle) + (amazonRatePerHour * workedAtAmazon) + (facebookRatePerHour * workedAtFacebook)
 
-console.log(totalPay);
+alert(totalPay);
 
 let isFull = confirm("Is the class full?")
 let noConflict = confirm("Does this class fit into the student's schedule?")
 let canEnroll = (isFull && noConflict)
 
-console.log(canEnroll);
+alert(canEnroll);
 
 let hasMoreThanTwoItemsOrIsPremiumMember = confirm("Are there more than two items or is the person a Premium member?")
 let isValid = confirm("Is offer still valid?")
 let applyOffer = (hasMoreThanTwoItemsOrIsPremiumMember && isValid)
 
-console.log(applyOffer);
+alert(applyOffer);
