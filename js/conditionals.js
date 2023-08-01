@@ -21,25 +21,25 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-// function analyzeColor (colorName) {
-//
-//     if (colorName == "red") {
-//         return "Apples are " + colorName;
-//     } else if (colorName == "blue") {
-//         return "The sky is " + colorName;
-//     } else if (colorName == "yellow") {
-//         return "Bananas are " + colorName;
-//     } else if (colorName == "green") {
-//         return "Money is " + colorName;
-//     } else {
-//         return "I do not know anything of this color.";
-//     }
-// }
-//
-// let userColor = prompt("What is your favorite color?")
-// let result = analyzeColor(userColor);
-//
-// console.log(result);
+function analyzeColor (colorName) {
+
+    if (colorName == "red") {
+        return "Apples are " + colorName;
+    } else if (colorName == "blue") {
+        return "The sky is " + colorName;
+    } else if (colorName == "yellow") {
+        return "Bananas are " + colorName;
+    } else if (colorName == "green") {
+        return "Money is " + colorName;
+    } else {
+        return "I do not know anything of this color.";
+    }
+}
+
+let userColor = prompt("What is your favorite color?")
+let result = analyzeColor(userColor);
+
+console.log(result);
 
 
 // Don't change the next two lines!
@@ -55,33 +55,33 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
-// result = analyzeColor(randomColor);
-// console.log(result);
+result = analyzeColor(randomColor);
+console.log(result);
 
 
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-// let userColor = prompt("What is your favorite color?")
-//
-// switch (userColor) {
-//     case "red":
-//         console.log("Apples are " + userColor);
-//         break;
-//     case "blue":
-//         console.log("The sky is " + userColor);
-//         break;
-//     case "yellow":
-//         console.log("Bananas are " + userColor);
-//         break;
-//     case "green":
-//         console.log("Money is " + userColor);
-//         break;
-//     default:
-//         console.log("I don't anything by that color");
-//         break;
-// }
+let userColor = prompt("What is your favorite color?")
+
+switch (userColor) {
+    case "red":
+        console.log("Apples are " + userColor);
+        break;
+    case "blue":
+        console.log("The sky is " + userColor);
+        break;
+    case "yellow":
+        console.log("Bananas are " + userColor);
+        break;
+    case "green":
+        console.log("Money is " + userColor);
+        break;
+    default:
+        console.log("I don't anything by that color");
+        break;
+}
 
 /**
  * TODO:
@@ -90,12 +90,12 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * function to show it to the user.
  */
 
-// function analyzeColor (colorName) {
-//     alert(userColor);
-// }
-//
-// let userColor = prompt("What is your favorite color?")
-// let result = analyzeColor(userColor);
+function analyzeColor (colorName) {
+    alert(userColor);
+}
+
+let userColor = prompt("What is your favorite color?")
+let result = analyzeColor(userColor);
 
 
 /* ########################################################################## */
@@ -120,30 +120,30 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
-// function calculateTotal (x, totalAmount) {
-//     if (x === 0) {
-//         alert("You didn't get a discount. You total is " + totalAmount);
-//     }  else if (x === 1) {
-//         totalAmount = totalAmount - (totalAmount * .1);
-//         alert("Your total after the discount is " + totalAmount);
-//     }  else if (x === 2) {
-//         totalAmount = totalAmount - (totalAmount * .25);
-//         alert("Your total after the discount is " + totalAmount);
-//     }  else if (x === 3) {
-//         totalAmount = totalAmount - (totalAmount * .35);
-//         alert("Your total after the discount is " + totalAmount);
-//     }  else if (x === 4) {
-//         totalAmount = totalAmount - (totalAmount * .5);
-//         alert("Your total after the discount is " + totalAmount);
-//     }  else if (x === 5) {
-//         totalAmount = 0;
-//         alert("Everything is FREE!!!");
-//     }
-// }
-//
-// let totalPrice = 100;
-// let discountOption = 4;
-// calculateTotal(discountOption, totalPrice);
+function calculateTotal (x, totalAmount) {
+    if (x === 0) {
+        alert("You didn't get a discount. You total is " + totalAmount);
+    }  else if (x === 1) {
+        totalAmount = totalAmount - (totalAmount * .1);
+        alert("Your total after the discount is " + totalAmount);
+    }  else if (x === 2) {
+        totalAmount = totalAmount - (totalAmount * .25);
+        alert("Your total after the discount is " + totalAmount);
+    }  else if (x === 3) {
+        totalAmount = totalAmount - (totalAmount * .35);
+        alert("Your total after the discount is " + totalAmount);
+    }  else if (x === 4) {
+        totalAmount = totalAmount - (totalAmount * .5);
+        alert("Your total after the discount is " + totalAmount);
+    }  else if (x === 5) {
+        totalAmount = 0;
+        alert("Everything is FREE!!!");
+    }
+}
+
+let totalPrice = 100;
+let discountOption = 4;
+calculateTotal(discountOption, totalPrice);
 
 
 
@@ -156,11 +156,11 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
-// let totalBill = prompt("What is your total bill?");
-// alert("Your lucky number is " + luckyNumber);
-// alert("Your total before discounts is " + totalBill);
-// calculateTotal(luckyNumber, totalBill);
+var luckyNumber = Math.floor(Math.random() * 6);
+let totalBill = prompt("What is your total bill?");
+alert("Your lucky number is " + luckyNumber);
+alert("Your total before discounts is " + totalBill);
+calculateTotal(luckyNumber, totalBill);
 
 
 /**
