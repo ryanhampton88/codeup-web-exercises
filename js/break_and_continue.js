@@ -1,4 +1,13 @@
-let userInput = 0;
+let userInput;
 do {
-    userInput = prompt("Enter an odd number between 1 and 50:")
-} while (userInput === userInput % 2)
+    userInput = parseInt(prompt("Enter a number between 1 and 50:"));
+} while (userInput < 1 || userInput > 50 || userInput % 2 === 0);
+
+console.log("Number to skip: " + userInput);
+
+for (let i = 1; i <= 50; i+=2) {
+    if (i === userInput) {
+        continue;
+    }
+    console.log("Here is an odd number: " + i);
+}
