@@ -23,9 +23,10 @@
      * accessing each element's index.
      */
 
-for (let eachName of names) {
-    console.log(eachName);
-}
+console.log(names[0]);
+console.log(names[1]);
+console.log(names[2]);
+console.log(names[3]);
 
     /**
      * TODO:
@@ -34,6 +35,9 @@ for (let eachName of names) {
      */
 
     //not sure what they're asking..comeback to this one
+    for (let eachName of names) {
+        console.log(eachName);
+    }
 
     /**
      * TODO:
