@@ -81,49 +81,55 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    let books = [
-        {
-            title: "Harry Potter",
-            author: {
-                firstName: "J.K.",
-                lastName: "Rowling"
-            }
-        },
-        {
-            title: "Rich Dad Poor Dad",
-            author: {
-                firstName: "Robert",
-                lastName: "Kiyosaki"
-            }
-        },
-        {
-            title: "4-Hour Work Week",
-            author: {
-                firstName: "Tim",
-                lastName: "Ferris"
-            }
-        },
-        {
-            title: "Think and Grow Rich",
-            author: {
-                firstName: "Napoleon",
-                lastName: "Hill"
-            }
-        },
-        {
-            title: "Atomic Habits",
-            author: {
-                firstName: "James",
-                lastName: "Clear"
-            }
-        }
-    ];
+    // let books = [
+    //     {
+    //         title: "Harry Potter",
+    //         author: {
+    //             firstName: "J.K.",
+    //             lastName: "Rowling"
+    //         }
+    //     },
+    //     {
+    //         title: "Rich Dad Poor Dad",
+    //         author: {
+    //             firstName: "Robert",
+    //             lastName: "Kiyosaki"
+    //         }
+    //     },
+    //     {
+    //         title: "4-Hour Work Week",
+    //         author: {
+    //             firstName: "Tim",
+    //             lastName: "Ferris"
+    //         }
+    //     },
+    //     {
+    //         title: "Think and Grow Rich",
+    //         author: {
+    //             firstName: "Napoleon",
+    //             lastName: "Hill"
+    //         }
+    //     },
+    //     {
+    //         title: "Atomic Habits",
+    //         author: {
+    //             firstName: "James",
+    //             lastName: "Clear"
+    //         }
+    //     }
+    // ];
+    let books =[];
+    // books.createBook("Harry Potter", "J.K.", "Rowling");
+    // books.createBook("Rich Dad Poor Dad", "Robert", "Kiyosaki");
+    // books.createBook("4-Hour Workweek", "Tim", "Ferris");
+    // books.createBook("Think and Grow Rich", "Napoleon", "Hill");
+    // books.createBook("Atomic Habits", "James", "Clear");
 
-    console.log(books[0].title)
-    console.log(books[1].title)
-    console.log(books[2].title)
-    console.log(books[3].title)
-    console.log(books[4].title)
+    // console.log(books[0].title)
+    // console.log(books[1].title)
+    // console.log(books[2].title)
+    // console.log(books[3].title)
+    // console.log(books[4].title)
 
 
     /**
@@ -169,15 +175,28 @@
      */
 
     books.createBook = function(title, firstName, lastName){
-        books.push({
-            title,
-            firstName,
-            lastName
-        })
+        books.push({title, firstName, lastName })
     }
+
+    books.createBook("Harry Potter", "J.K.", "Rowling");
+    books.createBook("Rich Dad Poor Dad", "Robert", "Kiyosaki");
+    books.createBook("4-Hour Workweek", "Tim", "Ferris");
+    books.createBook("Think and Grow Rich", "Napoleon", "Hill");
+    books.createBook("Atomic Habits", "James", "Clear");
 
     books.createBook("How To Code", "Ryan", "Hampton");
 
     console.log(books);
+
+books.showBookInfo = function(bookObject){
+    for (let i = 0; i < books.length; i++) {
+        if (books[i].title === bookObject || books[i].firstName === bookObject || books[i].lastName === bookObject || books.indexOf(books[i]) === bookObject) {
+            console.log(books[i]);
+            break;
+        }
+    }
+}
+
+books.showBookInfo(2);
 
 })();
