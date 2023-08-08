@@ -26,5 +26,11 @@
 let stringOfPlanets = planetsArray.join('<br>');
     console.log(stringOfPlanets);
 
-    let listOfPlanets = "<ul><li>" + planetsArray.join("<li>") + "</li></ul>";
+    let listOfPlanets = "<ul>";
+
+    for (let i = 0; i < planetsArray.length; i++) {
+        listOfPlanets += `<li>${planetsArray[i]}</li>`;
+    }
+    listOfPlanets += "</ul>";
+    console.log(listOfPlanets);
 })();
