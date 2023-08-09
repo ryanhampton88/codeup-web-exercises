@@ -52,21 +52,16 @@
         {name: 'George', amount: 320}
     ];
 
-    // for (let i = 0; i < shoppers.length; i++) {
-    //     console.log(shoppers[i].name);
-    // }
-
-    for (let i = 0; i < shoppers.length; i++) {
-        if (shoppers[i].amount > 200) {
-            let discountedPrice = shoppers[i].amount - (shoppers[i].amount * .12);
-            console.log(shoppers[i].name + " - Total Amount: " + shoppers[i].amount + " | Discount: 12%" + " | Discounted Price: " + discountedPrice.toFixed(2));
+    shoppers.forEach(function(element){
+        if (shoppers.amount > 200) {
+            let discountedPrice = shoppers.amount - (shoppers.amount * .12);
+            console.log(shoppers.name + " - Total Amount: " + shoppers.amount + " | Discount: 12%" + " | Discounted Price: " + discountedPrice.toFixed(2));
         }
-        if (shoppers[i].amount < 200) {
+        if (shoppers.amount < 200) {
             //let discountedPrice = shoppers[i].amount - (shoppers[i].amount * .12);
-            console.log(shoppers[i].name + " - Total Amount: " + shoppers[i].amount + " | There is no discount." + " | Total Due: " + shoppers[i].amount);
+            console.log(shoppers.name + " - Total Amount: " + shoppers.amount + " | There is no discount." + " | Total Due: " + shoppers.amount);
         }
-    }
-
+    });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -119,18 +114,6 @@
     //     }
     // ];
     let books =[];
-    // books.createBook("Harry Potter", "J.K.", "Rowling");
-    // books.createBook("Rich Dad Poor Dad", "Robert", "Kiyosaki");
-    // books.createBook("4-Hour Workweek", "Tim", "Ferris");
-    // books.createBook("Think and Grow Rich", "Napoleon", "Hill");
-    // books.createBook("Atomic Habits", "James", "Clear");
-
-    // console.log(books[0].title)
-    // console.log(books[1].title)
-    // console.log(books[2].title)
-    // console.log(books[3].title)
-    // console.log(books[4].title)
-
 
     /**
      * TODO:
