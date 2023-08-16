@@ -4,7 +4,11 @@ line
 comment
 */
 
+h1 {
+    color: blue;
+}
+
 .fancy-header {
-    color: purple; /* single line comment */
+    color: #8a4bc2; /* single line comment */
     text-decoration: underline;
 }
