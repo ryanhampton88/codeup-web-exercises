@@ -4,11 +4,42 @@ line
 comment
 */
 
+body {
+    background-color: #f5e5da;
+    font-family: Arial;
+}
+
 h1 {
     color: blue;
 }
 
 .fancy-header {
-    color: #8a4bc2; /* single line comment */
+    color: #090909; /* single line comment */
     text-decoration: underline;
+    text-align: center;
+}
+
+h3 {
+    color: #fa931b;
+}
+
+li {
+    list-style-type: circle;
+}
+
+table {
+    font-size: 15px;
+}
+
+td {
+    padding-right: 20px;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: #69d98f;
+    text-transform: uppercase;
 }
