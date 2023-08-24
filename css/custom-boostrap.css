@@ -1,0 +1,52 @@
+.btn {
+    width: 250px;
+    font-size: 10px;
+}
+.hero {
+    background-image: url('../img/pizza.png');
+    height: 346px;
+    background-size: cover;
+    position: relative;
+}
+.hero .hero-bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #DDDFE199;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.section-header {
+    padding-top: 20px;
+}
+.size-and-crust-header {
+    width: 100%;
+    background-color: #2d81ee;
+    color: #FFF;
+    font-size: 12px;
+    line-height: 30px;
+    padding-left: 20px;
+}
+.tab-header {
+}
+.card {
+    max-width: 98%;
+    margin: 10px;
+}
+.first-card {
+    margin-bottom: 10px;
+}
+.tab-next {
+    background-color: #fafafa;
+}
+.tab-container {
+    border: 1px solid #d9d9d9;
+}
+.next-step-button {
+    background-color: #2d81ee;
+    color: white;
+    border-style: none;
+    border-radius: 3px;
+}

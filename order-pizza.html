@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/custom-boostrap.css">
+  <title>Order Pizza</title>
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="navbar navbar-expand-sm bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Pizza World</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Order Online</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Menu</a>
+            </li>
+          </ul>
+          <form class="d-flex me-auto" role="search">
+            <input class="form-control me-2" type="search" placeholder="Zip Code" aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit">Search Stores Near You!</button>
+          </form>
+          <img src="img/file-person.svg">
+          Signup!
+        </div>
+      </div>
+    </nav>
+    <div class="container hero">
+      <div class="hero-bar">
+        <h2>Welcome To Pizza World!</h2>
+      </div>
+    </div>
+  <section>
+    <h3 class="section-header">Build Your Own Pizza!</h3>
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" aria-current="page" href="#tab1"
+             data-bs-toggle="list"><span class="badge text-bg-secondary">1</span>Size and Crust</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#tab2" data-bs-toggle="list"><span class="badge text-bg-secondary">2</span>Cheese and Sauce</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#tab3" data-bs-toggle="list"><span class="badge text-bg-secondary">3</span>Toppings</a>
+        </li>
+      </ul>
+      <div class="tab-content tab-container">
+        <div class="tab-pane active" id="tab1" role="tabpanel">
+          <div class="tab-header">
+            <p class="size-and-crust-header">Choose Size and Crust</p>
+            <div class="card first-card" style="width: 100%;">
+              <div class="card-header">
+                Hand Tossed
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Garlic Seasoned Crust, with a rich, buttery taste</li>
+                <li class="list-group-item">
+                  <form>
+                    <input type="radio" name="size" id="handTossedSmall")>
+                    <label>Small (10")</label>
+                  </form>
+                </li>
+                <li class="list-group-item">
+                  <form>
+                    <input type="radio" name="size" id="handTossedMedium")>
+                    <label>Medium (12")</label>
+                  </form>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card" style="width: 100%;">
+            <div class="card-header">
+              Crispy Thin
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Thin enough for optimum crispy to crunch ratio.</li>
+              <li class="list-group-item">
+                <form>
+                  <input type="radio" name="size" id="thinMedium")>
+                  <label>Medium (12")</label>
+                </form>
+              </li>
+              <li class="list-group-item">
+                <form>
+                  <input type="radio" name="size" id="thinLarge")>
+                  <label>Large (14")</label>
+                </form>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-next">
+            <button class="next-step-button btn-primary"><a class="page-link" href="#">Next Step ></a></button>
+          </div>
+        </div>
+        <div class="tab-pane" id="tab2" role="tabpanel">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic pariatur in, corporis dolores
+            accusamus, reprehenderit, accusantium suscipit aliquid quia ipsa dicta expedita magni amet
+            quibusdam inventore praesentium incidunt. Porro, corrupti.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim explicabo voluptates nulla ullam
+            totam consequatur, et, aliquam voluptatibus sequi libero nesciunt tenetur dolor recusandae
+            asperiores molestias. Veniam laboriosam repellat impedit?</p>
+        </div>
+        <div class="tab-pane" id="tab3" role="tabpanel">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates modi iure quia cum est
+            voluptas, praesentium consectetur sed commodi tenetur velit animi quibusdam dolorem distinctio
+            dolor beatae quasi sint recusandae.</p>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam aliquid ullam quidem dolor
+            sapiente labore, voluptate obcaecati quaerat aliquam sequi tempora dolorem est reiciendis
+            perspiciatis, maiores commodi ipsum nam ipsam!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
