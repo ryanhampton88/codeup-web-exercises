@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Konami</title>
+    <style>
+        body {background-color: black; color: #d9d9d9; font-family: "Courier New";}
+        h1 {color: #f3e607;}
+    </style>
+</head>
+<body>
+
+<h1>Konami Code</h1>
+<div id="currentInputCode"></div>
+<div id="currentInput"></div>
+
+<div id="game">
+
+</div>
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+  "use strict";
+
+  $(function(){
+
+      let secretCode = "3840384037393739666513";
+      let secretCodeStr = "";
+      let strCharacters = "";
+      let inputKeys = "";
+
+      $("body").on("keyup", (event) => {
+          console.log(event);
+          console.log("event object property 'originalEvent':");
+          console.log(event.originalEvent);
+          console.log("keycode: " + event.originalEvent.keyCode);
+          console.log("key: " + event.originalEvent.key);
+
+          secretCodeStr += event.originalEvent.keyCode;
+
+          strCharacters += event.originalEvent.key;
+
+          if (secretCodeStr === secretCode) {
+              alert("You have 100 Lives!");
+          }
+
+          $("#currentInputCode").text(secretCodeStr);
+          $("#currentInput").text(strCharacters);
+
+      })
+
+
+
+  });
+
+
+
+
+  // $(document).keyup(function){
+  //   console.log(event.keyCode);
+  //
+  //   if (inputKeys === secretCode) {
+  //       alert("You have 100 Lives!")
+  //   }
+  // });
+
+</script>
+
+</body>
+</html>
