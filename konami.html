@@ -7,31 +7,40 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Konami</title>
     <style>
-        body {background-color: black; color: #d9d9d9; font-family: "Courier New";}
+        body {background-color: #313131; font-family: "Courier New";}
+        #question {color: #d9d9d9;}
         h1 {color: #f3e607;}
+        /*#game {*/
+        /*    display: none;*/
+        /*}*/
     </style>
 </head>
 <body>
 
 <h1>Konami Code</h1>
+<div id="question"></div>
+<div id="game">
+<!--    <img src="img/doom.jpg" alt="doom-game">-->
+</div>
 <div id="currentInputCode"></div>
 <div id="currentInput"></div>
-
-<div id="game">
-
-</div>
-
-
-
-
-
-
 
 
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script>
   "use strict";
+  let i = 0;
+  function typeWriter() {
+      let question = "Would you like to play a game? Press Enter.";
+      let textSpeed = 50;
+      if (i < question.length) {
+          document.getElementById("question").innerHTML += question.charAt(i);
+          i++;
+          setTimeout(typeWriter, textSpeed);
+      }
+  }
+  typeWriter();
 
   $(function(){
 
@@ -39,6 +48,8 @@
       let secretCodeStr = "";
       let strCharacters = "";
       let inputKeys = "";
+      let playGame = "13";
+
 
       $("body").on("keyup", (event) => {
           console.log(event);
@@ -48,11 +59,16 @@
           console.log("key: " + event.originalEvent.key);
 
           secretCodeStr += event.originalEvent.keyCode;
-
           strCharacters += event.originalEvent.key;
 
           if (secretCodeStr === secretCode) {
               alert("You have 100 Lives!");
+          }
+
+          if (secretCodeStr === playGame) {
+              document.getElementById("game").innerHTML = "<div><img src='img/doom.jpg'></div>";
+              secretCodeStr = '';
+              strCharacters = '';
           }
 
           $("#currentInputCode").text(secretCodeStr);
