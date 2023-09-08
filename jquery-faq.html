@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery Faq</title>
+    <style>
+      .invisible {
+        visibility: hidden;
+      }
+      dt {
+        font-weight: bold;
+      }
+      .highlighted {
+        background-color: yellow;
+      }
+    </style>
+</head>
+<body>
+
+  <dl>
+    <dt>Yellowstone National Park</dt>
+    <dd class="info invisible highlighted">Yellowstone National Park is a nearly 3,500-sq.-mile wilderness recreation area atop a volcanic hot spot.
+      Mostly in Wyoming, the park spreads into parts of Montana and Idaho too. </dd>
+
+    <dt>Big Bend National Park</dt>
+    <dd class="info invisible highlighted">Big Bend National Park is in southwest Texas and includes the entire Chisos mountain range and a large
+      swath of the Chihuahuan Desert.</dd>
+
+    <dt>Guadalupe Mountains National Park</dt>
+    <dd class="info invisible highlighted">Guadalupe Mountains National Park is in the vast Chihuahuan Desert of western Texas. It’s known for its
+      bright-white Salt Basin Dunes, wildlife-rich grassland and fossilized reef mountains.</dd>
+
+    <dt>Glacier National Park</dt>
+    <dd class="info invisible highlighted">Glacier National Park is a 1,583-sq.-mi. wilderness area in Montana's Rocky Mountains, with glacier-carved
+      peaks and valleys running to the Canadian border. </dd>
+
+    <dt>Yosemite National Park</dt>
+    <dd class="info invisible highlighted">Yosemite National Park is in California’s Sierra Nevada mountains.</dd>
+
+    <dt>Zion National Park</dt>
+    <dd class="info invisible highlighted">Zion National Park is a southwest Utah nature preserve distinguished by Zion Canyon’s steep red cliffs.</dd>
+
+    <dt>Rocky Mountain National Park</dt>
+    <dd class="info invisible highlighted">Rocky Mountain National Park in northern Colorado spans the Continental Divide and encompasses protected mountains,
+      forests and alpine tundra.</dd>
+
+    <dt>Acadia National Park</dt>
+    <dd class="info invisible highlighted">Acadia National Park is a 47,000-acre Atlantic coast recreation area primarily on Maine's Mount Desert Island.</dd>
+
+    <dt>Death Valley National Park</dt>
+    <dd class="info invisible highlighted">Death Valley National Park straddles eastern California and Nevada.</dd>
+
+    <dt>Arches National Park</dt>
+    <dd class="info invisible highlighted">Arches National Park lies north of Moab in the state of Utah.</dd>
+  </dl>
+
+  <a href="#" id="toggleAppearance">Click Me</a>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <script>
+    "use strict";
+
+    $("#toggleAppearance").on("click", function(event){
+      event.preventDefault();
+      $(".info").toggleClass( "invisible" );
+    })
+
+    $(".info").on("click", function(){
+      $(".info").toggleClass( "highlighted" );
+    })
+
+  </script>
+</body>
+</html>
