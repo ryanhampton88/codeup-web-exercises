@@ -12,9 +12,24 @@
       }
       dt {
         font-weight: bold;
+        font-family: arial;
+      }
+      dd {
+        font-family: arial;
       }
       .highlighted {
         background-color: yellow;
+      }
+      .yellowBackground {
+        background-color: yellow;
+      }
+      h3 {
+        margin: 0;
+        font-family: arial;
+      }
+      ul {
+        list-style-type: none;
+        font-family: arial;
       }
     </style>
 </head>
@@ -59,6 +74,39 @@
 
   <a href="#" id="toggleAppearance">Click Me</a>
 
+  <hr>
+
+  <h3>Yosemite National Park</h3>
+  <ul>
+    <li>Yosemite is in California.</li>
+    <li>Yosemite has mountains.</li>
+    <li>Yosemite is big.</li>
+    <li>Yosemite is dry.</li>
+  </ul>
+
+  <h3>Zion National Park</h3>
+  <ul>
+    <li>Zion is in Utah.</li>
+    <li>Zion has mountains.</li>
+    <li>Zion has red cliffs.</li>
+    <li>Zion is dangerous.</li>
+  </ul>
+
+  <h3>Yellowstone National Park</h3>
+  <ul>
+    <li>Yellowstone has a tv show.</li>
+    <li>Yellowstone is one of the largest parks in the country.</li>
+    <li>Yellowstone has a variety of different species.</li>
+    <li>Yellowstone is not yellow.</li>
+  </ul>
+  
+  <button id="list-item-button">Click to format lists.</button>
+  
+  
+  
+  
+  
+  
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
   <script>
@@ -72,6 +120,22 @@
     $(".info").on("click", function(){
       $(".info").toggleClass( "highlighted" );
     })
+
+    $("#list-item-button").on("click", function(){
+      $("ul").each((index, element) => {
+        $(element).children().last().css("background-color", "yellow");
+      });
+    });
+
+    $("h3").on("click", (e) => {
+      $(e.target).next().css("font-weight", "bold");
+    });
+
+    $("li").on("click", (e) => {
+      $(e.target).parent().children().first().css("color", "blue");
+    })
+
+
 
   </script>
 </body>
