@@ -12,23 +12,63 @@
         @import "css/layout.css";
         @import "css/resets.css";
 
-        .table-container {
-            background-color: #f4c632;
+        .navbar-brand {
+            color: #1999f4;
+            font-weight: bold;
         }
+
         table, th, td {
             border: 1px solid black;
+        }
+        table {
+            width: 500px;
         }
         th {
             background-color: #050505;
             color: white;
         }
+        .hero img{
+            width: 100%;
+            height: 600px;
+            padding: 20px;
+        }
 
     </style>
 </head>
 <body>
-<h1 style="font-family: Helvetica; display: flex; justify-content: center;">My Tool Store</h1>
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Creator's Toolbox</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#table">Pricing</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
-<div class="container table-container">
+
+<div class="container">
+    <div class="row full-width hero ">
+        <img src="img/creator-tools.jpg" alt="image of tools">
+    </div>
+</div>
+
+
+<div class="container table-container" id="table">
     <div class="row">
         <div class="column align-items-center py-25">
             <table id="products">
@@ -42,11 +82,12 @@
                 </thead>
                 <tbody id="insertProducts"></tbody>
             </table>
+            <button id="update-btn">Refresh</button>
         </div>
     </div>
 </div>
 
-<button id="update-btn">Refresh</button>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
@@ -87,6 +128,8 @@
                 tbody.innerHTML += html;
             })
         }
+
+        updateOrder();
 
         $("#update-btn").on("click", updateOrder);
 
