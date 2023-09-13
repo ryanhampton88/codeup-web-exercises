@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mapbox Maps API</title>
+<!--    LOADING MAPBOX API-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
+  <style>
+    body {
+      background-color: #898989;
+    }
+  </style>
+</head>
+<body>
+  <div id='map' style='width: 600px; height: 400px;'></div>
+
+<!--LOADING API KEY FROM FILE-->
+<script src="js/keys.js"></script>
+<!--  LOADING MAPBOX UTILS-->
+<script src="js/mapbox-geocoder-utils.js"></script>
+<!--  CUSTOM JS-->
+<script>
+  "use strict";
+
+  mapboxgl.accessToken = MAPBOX_API_TOKEN;
+  const map = new mapboxgl.Map({
+  container: 'map', // container ID
+  style: 'mapbox://styles/mapbox/navigation-day-v1',
+  center: [-98.4946, 29.4252], // starting position [lng, lat]
+  zoom: 11, // starting zoom
+  });
+
+  let favRestaurant = {
+    address: "18318 Sonterra Place",
+    popupHTML: "<p>Chama Gaucha!</p>"
+  }
+
+  let restaurants = [
+    {
+      address: "3820 FM3009, Schertz, TX 78154",
+      popupHTML: "<p>Garcia's Mexican Restaurant</p>"
+    },
+    {
+      address: "900 E 11th St, Austin, TX 78702",
+      popupHTML: "<p>Franklin's BBQ</p>"
+    },
+    {
+      address: "8124 Agora Pkwy, Universal City, TX 78154",
+      popupHTML: "<p>375 Social Kitchen</p>"
+    }
+    ]
+
+  // geocode("18318 Sonterra Place", MAPBOX_API_TOKEN).then(function(result) {
+  //   console.log(result);
+  //   map.setCenter(result);
+  //   map.setZoom(15);
+  // });
+
+  function placeMarkerAndPopup(info, token, map) {
+    geocode(info.address, token).then(function (coordinates) {
+      const popup = new mapboxgl.Popup()
+              .setHTML(info.popupHTML);
+      const marker = new mapboxgl.Marker()
+              .setLngLat(coordinates)
+              .addTo(map)
+              .setPopup(popup);
+    });
+  }
+
+  // placeMarkerAndPopup(favRestaurant, MAPBOX_API_TOKEN, map)
+
+restaurants.forEach((object) => {
+  placeMarkerAndPopup(object, MAPBOX_API_TOKEN, map);
+})
+
+
+</script>
+</body>
+</html>
