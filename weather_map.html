@@ -10,26 +10,47 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
-    <style>
-        .weather {
-            padding: 100px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/weather.css" rel="stylesheet">
 </head>
 <body>
 
-<h1>Hey! What's the weather like</h1>
-<form id="searchForm">
-    <label>Search for a place:
-        <input name="searchInput" type="text" id="search-input" placeholder="city,state,country (e.g. San Antonio,TX,USA)">
-    </label>
-    <button type="submit" id="submit">GO</button>
-</form>
+<div id="background-weather">
+<video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+    <source src="videos/thunderstorm.mp4" type="video/mp4">
+</video>
+</div>
 
-<div id="current-location"></div>
+<header class="container text-center">
+    <div class="row justify-content-center">
+        <div class="col logo">
+            Weather
+        </div>
+    </div>
+</header>
+
+<div class="container text-center search-container">
+    <div class="row">
+        <div class="col">
+            <form class="searchForm search" id="searchForm">
+                <span class="fa fa-search form-control"></span>
+                    <input class="searchForm searchInput" name="search" type="text" id="search-input"
+                           placeholder="city,state,country (e.g. San Antonio,TX,USA)">
+                <button type="submit" id="submit">GO</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container text-center">
+    <div class="row my-25">
+        <div class="col">
+            <div id="current-location"></div>
+        </div>
+    </div>
+</div>
 
 <div class="container text-center weather">
-    <div class="row align-items-start" id="insert-weather"></div>
+    <div class="row" id="insert-weather"></div>
 </div>
 
 <div class="container">

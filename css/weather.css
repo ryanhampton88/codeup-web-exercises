@@ -1,0 +1,94 @@
+body {
+    border-radius: 46px;
+    background: linear-gradient(169deg, #2E335A 0%, #1C1B33 98.09%);
+    box-shadow: -40px 60px 150px 0px rgba(59, 59, 59, 0.70);
+}
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    background-blend-mode: exclusion;
+    opacity: 0.1;
+}
+.logo {
+    color: white;
+    font-family: Arial;
+    font-size: 40px;
+    padding: 25px;
+}
+.search-container {
+    padding: 50px;
+}
+#current-location {
+    font-family: Arial;
+    font-size: 20px;
+    color: white;
+}
+input {
+    background-color: #1e1e1e;
+    opacity: 0.5;
+    width: 500px;
+    height: 75px;
+    padding-left: 40px;
+    border-style: none;
+    border-radius: 10px;
+    font-size: 25px;
+    color: white;
+}
+input:focus {
+    border: 6px solid #72c3f4;
+
+
+}
+.search .form-control {
+    position: absolute;
+    /*z-index: 2;*/
+    /*display: block;*/
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border: none;
+    color: white;
+    line-height: 78px;
+    text-align: center;
+    pointer-events: none;
+    /*color: #aaa;*/
+}
+.fa .fa-search {
+    width: 25px;
+    height: 25px;
+}
+button {
+    width: 75px;
+    height: 70px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: #2d81ee;
+    font-family: Arial;
+    box-shadow: 5px 5px 20px 0px rgba(58, 57, 57, 0.7);
+    margin: 10px;
+    line-height: 75px;
+}
+.display-card {
+    margin: 15px;
+    background: linear-gradient(270deg, #362A84 0.23%, #5936B4 94.2%);
+    border: 0 solid black;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    transition: transform .2s;
+}
+.display-card:hover {
+    transform: scale(1.5);
+}
+
+
+.weather {
+    padding: 50px;
+}
