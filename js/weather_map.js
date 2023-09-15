@@ -99,8 +99,8 @@ $("#submit").on("click", function () {
     let searchForm = document.getElementById("searchForm")
     searchForm.addEventListener("submit", function (e) {
         e.preventDefault();
-        let search = searchForm.elements.input.value;
-        console.log(searchForm.elements.input.value);
+        let search = document.getElementById("searchInput").value;
+        console.log(search);
         let searchArray = search.split(",")
         console.log(search);
         console.log(searchArray[0]);
@@ -144,6 +144,7 @@ $("#submit").on("click", function () {
                         </div>
                 </div>
                 `
+                    document.getElementById("searchInput").value = '';
                 }
                 $("#insert-weather").html(html);
                 $("#current-location").html(location);
