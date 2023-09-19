@@ -11,16 +11,26 @@ $.get(FIVE_DAY_WEATHER_FORECAST_URL + `q=${defaultLocation}&appid=${WEATHER_MAP_
         // console.log(data.list);
         let html = "";
         let weatherImage = "";
+        let backgroundHTML = "";
 
         for (let i = 0; i < data.list.length; i += 8) {
 
             if (data.list[i].weather[0].description === `clear sky`) {
                 weatherImage = `<img src="img/sun.svg" style="width: 70px; height: 70px;">`;
+                backgroundHTML = `<video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                    <source src="videos/moving-clouds.mp4" type="video/mp4">
+                                  </video>`
             } else if ( data.list[i].weather[0].description === `few clouds` || data.list[i].weather[0].description === `overcast clouds` ||
-                data.list[i].weather[0].description === `broken clouds`) {
+                data.list[i].weather[0].description === `broken clouds` || data.list[i].weather[0].description === `scattered clouds`) {
                 weatherImage = `<img src="img/white-fluffy-cloud.svg" style="width: 80px; height: 80px;">`
+                backgroundHTML = `<video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                    <source src="videos/moving-clouds.mp4" type="video/mp4">
+                                  </video>`
             } else if (data.list[i].weather[0].description === `light rain`) {
                 weatherImage = `<img src="img/rain-cloud.svg" style="width: 70px; height: 70px;">`
+                backgroundHTML = `<video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                    <source src="videos/rain.mp4" type="video/mp4">
+                                  </video>`
             }
 
             html += `
@@ -37,6 +47,7 @@ $.get(FIVE_DAY_WEATHER_FORECAST_URL + `q=${defaultLocation}&appid=${WEATHER_MAP_
         }
         $("#insert-weather").html(html);
         $("#current-location").html(defaultLocation);
+        $("#background-weather").html(backgroundHTML);
     })
 
 //  ----- Added Map ------- //
@@ -61,19 +72,32 @@ map.on("click", (e) => {
             console.log(data)
             let html = "";
             let weatherImage = "";
+            let backgroundHTML = "";
             let location = `${data.city.name}`
 
             for (let i = 0; i < data.list.length; i += 8) {
 
                 if (data.list[i].weather[0].description === `clear sky`) {
                     weatherImage = `<img src="img/sun.svg" style="width: 70px; height: 70px;">`;
+                    backgroundHTML = `<video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                    <source src="videos/moving-clouds.mp4" type="video/mp4">
+                                  </video>`
                 } else if ( data.list[i].weather[0].description === `few clouds` || data.list[i].weather[0].description === `overcast clouds` ||
                     data.list[i].weather[0].description === `broken clouds`) {
                     weatherImage = `<img src="img/white-fluffy-cloud.svg" style="width: 80px; height: 80px;">`
+                    backgroundHTML = `<video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                    <source src="videos/moving-clouds.mp4" type="video/mp4">
+                                  </video>`
                 } else if (data.list[i].weather[0].description === `light rain`) {
                     weatherImage = `<img src="img/rain-cloud.svg" style="width: 70px; height: 70px;">`
+                    backgroundHTML = `<video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                    <source src="videos/rain.mp4" type="video/mp4">
+                                  </video>`
                 } else if (data.list[i].weather[0].description === `scattered clouds`) {
                     weatherImage = `<img src="img/white-fluffy-cloud.svg" style="width: 70px; height: 70px;">`
+                    backgroundHTML = `<video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                    <source src="videos/moving-clouds.mp4" type="video/mp4">
+                                  </video>`
                 }
 
                 html += `
@@ -90,6 +114,7 @@ map.on("click", (e) => {
             }
             $("#insert-weather").html(html);
             $("#current-location").html(location);
+            $("#background-weather").html(backgroundHTML);
         })
 })
 
@@ -118,19 +143,32 @@ $("#submit").on("click", function () {
             (data) => {
                 let html = "";
                 let weatherImage = "";
+                let backgroundHTML = "";
                 let location = `${data.city.name}`
 
                 for (let i = 0; i < data.list.length; i += 8) {
 
                     if (data.list[i].weather[0].description === `clear sky`) {
                         weatherImage = `<img src="img/sun.svg" style="width: 70px; height: 70px;">`;
+                        backgroundHTML = `<video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                    <source src="videos/moving-clouds.mp4" type="video/mp4">
+                                  </video>`
                     } else if ( data.list[i].weather[0].description === `few clouds` || data.list[i].weather[0].description === `overcast clouds` ||
                         data.list[i].weather[0].description === `broken clouds`) {
                         weatherImage = `<img src="img/white-fluffy-cloud.svg" style="width: 80px; height: 80px;">`
+                        backgroundHTML = `<video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                    <source src="videos/moving-clouds.mp4" type="video/mp4">
+                                  </video>`
                     } else if (data.list[i].weather[0].description === `light rain`) {
                         weatherImage = `<img src="img/rain-cloud.svg" style="width: 70px; height: 70px;">`
+                        backgroundHTML = `<video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                    <source src="videos/rain.mp4" type="video/mp4">
+                                  </video>`
                     } else if (data.list[i].weather[0].description === `scattered clouds`) {
                         weatherImage = `<img src="img/white-fluffy-cloud.svg" style="width: 70px; height: 70px;">`
+                        backgroundHTML = `<video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                    <source src="videos/moving-clouds.mp4" type="video/mp4">
+                                  </video>`
                     }
 
                     html += `
@@ -148,6 +186,7 @@ $("#submit").on("click", function () {
                 }
                 $("#insert-weather").html(html);
                 $("#current-location").html(location);
+                $("#background-weather").html(backgroundHTML);
             })
     })
 })
